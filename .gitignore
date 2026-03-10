@@ -5,4 +5,3 @@ __pycache__/
 .DS_Store
 .env
 results/
-models/emotion_transformer/model.safetensors
