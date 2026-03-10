@@ -226,12 +226,13 @@ def analyze_emotion(input_text: str, tokenizer, model):
 
     return prediction, confidence, top3, df
 
-try:
-    tokenizer, model = load_model()
-except Exception as e:
-    st.error("Model could not be loaded from models/emotion_transformer.")
-    st.exception(e)
-    st.stop()
+with st.spinner("Loading model... Please wait a few seconds."):
+    try:
+        tokenizer, model = load_model()
+    except Exception as e:
+        st.error("Model could not be loaded from models/emotion_transformer.")
+        st.exception(e)
+        st.stop()
 
 # SESSION STATE
 
